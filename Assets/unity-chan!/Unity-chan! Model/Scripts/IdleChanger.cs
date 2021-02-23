@@ -23,7 +23,7 @@ namespace UnityChan
 		public float _threshold = 0.5f;				// ランダム判定の閾値
 		public float _interval = 10f;				// ランダム判定のインターバル
 		//private float _seed = 0.0f;					// ランダム判定用シード
-	
+		public GameObject Chan;
 
 
 		// Use this for initialization
@@ -41,7 +41,7 @@ namespace UnityChan
 		void  Update ()
 		{
 			// ↑キー/スペースが押されたら、ステートを次に送る処理
-			if (Input.GetKeyDown ("up") || Input.GetButton ("Jump")) {
+			if (Input.GetKeyDown ("up") || Input.GetButton ("Jump") || Input.GetButton("Animation Convert Key")) {
 				// ブーリアンNextをtrueにする
 				anim.SetBool ("Next", true);
 			}
@@ -71,6 +71,8 @@ namespace UnityChan
 					previousState = currentState;
 				}
 			}
+
+			
 		}
 
 		void OnGUI ()
